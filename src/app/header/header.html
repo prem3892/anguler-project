@@ -1,0 +1,24 @@
+<div class="container-xl flex items-center px-7.5 py-5 justify-between text-sm bg-[#F9FAFB]">
+    <div class="headerLeft">
+        <img src= {{getheaderdata.headerImg}} alt="Logo" class="headerLogo">
+    </div>
+    <div class="headerFill">
+        <input type={{getheaderdata.headerFill}} class="headerInput border-1 w-154 h-10 bg-[#FFFFFF] border-[#E7EAEE] rounded-lg text-[12px] pl-[17px] font-light* opacity-60" placeholder="Search for Chair Cover">
+    </div>
+    <div class="headerRight">
+        <ul class="flex">
+            @for (headerRight of getheaderdata.headerRight; track headerRight) {
+              <li class="justify-between px-3">{{headerRight}}</li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="container h-12.5 mx-auto">
+    <div class="headerBottom px-7 py-3 text-[#222D37] ">
+        <ul class="flex items-center justify-between">
+            @for (headerBottom of getheaderdata.headerBottom; track headerBottom) {
+                <li class="justify-between px-3 tracking-wider  ">{{headerBottom}}</li>
+            }
+        </ul>
+    </div>
+</div>
