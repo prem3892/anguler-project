@@ -7,7 +7,7 @@ module.exports = tseslint.config(
   {
     files: ["**/*.ts"],
     extends: [
-      eslint.configs.recommended,
+      eslint.configs.recommended,       
       ...tseslint.configs.recommended,
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
@@ -30,6 +30,7 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
+      "no-console": "warn",
     },
   },
   {
@@ -39,7 +40,7 @@ module.exports = tseslint.config(
       ...angular.configs.templateAccessibility,
     ],
     rules: {
-       "no-console": "warn",
+      "no-console": "warn",
       semi: ["error", "always"],
       quotes: ["error", "double"],
     },

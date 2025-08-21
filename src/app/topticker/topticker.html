@@ -1,0 +1,24 @@
+<div class="topticker container text-sm">
+  <div class="container text-black h-10 items-center">
+      <p [innerHTML]="gettoptickersdata.topticker1" class="uppercase flex justify-center font-bold">{{gettoptickersdata.topticker1}}</p>
+  </div>
+  <div class="container-xl bg-[#ff0000] text-white font-semibold h-10 items-center">
+    <p class="flex uppercase justify-center">{{gettoptickersdata.topticker2}}</p>
+  </div>
+  <div class="container flex justify-between  px-7.5 leading-12 bg-[#282626] text-white text-sm font-semibold items-center">
+    <div class="uppercase text-xs">
+          <p>{{gettoptickersdata.topticker3left}}</p>
+    </div>
+    <div>
+          <p>{{gettoptickersdata.topticker3center}}</p>
+    </div>
+    <div>
+        <ul class="flex justify-between gap-4">
+          @for (topticker3right of gettoptickersdata.topticker3right; track topticker3right) {
+              <li>{{topticker3right}}</li>
+              }
+        </ul>
+    </div>
+  </div>
+</div>
+
