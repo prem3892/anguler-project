@@ -14,4 +14,5 @@ export class App {
   data(){
     console.log(10)
   }
+
 }
