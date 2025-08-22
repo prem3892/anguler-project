@@ -1,24 +1,53 @@
-<div class="container-xl flex items-center px-7.5 py-5 justify-between text-sm bg-[#F9FAFB]">
-    <div class="headerLeft">
-        <img src= {{getheaderdata.headerImg}} alt="Logo" class="headerLogo">
+<header>
+    <div class="header w-full bg-[#F9FAFB]">
+        <div class="w-7xl mx-auto h-20 flex items-center justify-between">
+            <!-- Left Logo -->
+            <div class="headerLeft flex-shrink-0">
+                <div class="headerLogo max-w-[180px]">
+                    <img src="{{getheaderdata.headerImg}}" alt="Logo" class="w-full h-auto">
+                </div>
+            </div>
+
+            <!-- Middle Search -->
+            <div
+                class="headerFill flex items-center border border-[#E7EAEE] rounded-lg bg-white mx-6 flex-grow max-w-xl">
+                <input type="{{getheaderdata.headerFill}}"
+                    class="headerInput flex-grow h-10 opacity-60 font-normal focus:outline-none text-xs px-3"
+                    placeholder="Search for Chair Cover">
+                <div class="buttons flex items-center gap-2 text-xs px-3">
+                    <span>S</span>
+                    <span>F</span>
+                    <span>M</span>
+                </div>
+            </div>
+
+            <!-- Right Menu -->
+            <div class="headerRight font-medium flex-shrink-0">
+                <ul class="flex gap-4">
+                    @for (headerRight of getheaderdata.headerRight; track headerRight) {
+                    <li class="text-[#333333] text-sm cursor-pointer">{{headerRight}}</li>
+                    }
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="headerFill">
-        <input type={{getheaderdata.headerFill}} class="headerInput border-1 w-154 h-10 bg-[#FFFFFF] border-[#E7EAEE] rounded-lg text-[12px] pl-[17px] font-light* opacity-60" placeholder="Search for Chair Cover">
-    </div>
-    <div class="headerRight">
-        <ul class="flex">
-            @for (headerRight of getheaderdata.headerRight; track headerRight) {
-              <li class="justify-between px-3">{{headerRight}}</li>
+
+    <!-- Bottom Navigation -->
+    <div class="headerBottom w-7xl mx-auto border-b border-[#EBF1F6] bg-white">
+        <ul class="flex flex-wrap justify-center gap-19 px-6 py-4 text-sm font-medium text-[#333333]">
+            @for (item of getheaderdata.headerBottom; track item) {
+            <li class="relative group cursor-pointer hover:bg-[#f1f8ff] ">
+                {{ item.title }}
+            
+                <!-- Submenu -->
+                <ul *ngIf="item.sub?.length"
+                    class="absolute left-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg rounded-lg min-w-[250px] py-2 z-50">
+                    @for (subItem of item.sub; track subItem) {
+                    <li class="px-4 py-2 hover:bg-[#f1f8ff]">{{ subItem }}</li>
+                    }
+                </ul>
+            </li>
             }
         </ul>
     </div>
-</div>
-<div class="container h-12.5 mx-auto">
-    <div class="headerBottom px-7 py-3 text-[#222D37] ">
-        <ul class="flex items-center justify-between">
-            @for (headerBottom of getheaderdata.headerBottom; track headerBottom) {
-                <li class="justify-between px-3 tracking-wider  ">{{headerBottom}}</li>
-            }
-        </ul>
-    </div>
-</div>
+</header>
