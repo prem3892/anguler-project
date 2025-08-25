@@ -1,4 +1,5 @@
-import { data } from "./types";
+import { data, HeaderDataNew } from "./types";
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -17,3 +18,7 @@ export const HeaderData: data={
     { title: "Car Covers", sub: ["Sedan", "SUV", "Truck", "Chair Covers", "Table Covers", "Sofa Covers"] }
   ]
 } 
+
+export const headerDataNew:HeaderDataNew={
+sub:[{label:"helo world", icon:faAngleDoubleLeft}]
+}
