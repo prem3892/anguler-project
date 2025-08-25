@@ -1,45 +1,99 @@
-<div class="container-xl text-sm w-full">
-
-  <div class="topticker1 text-black h-10 flex items-center justify-center">
-    <p [innerHTML]="gettoptickersdata.topticker1" class="uppercase font-bold">
+<div class="w-full">
+  <!-- Top Ticker 1 -->
+  <div
+    class="topticker1 text-black h-8 sm:h-10 flex items-center justify-center px-2 sm:px-4 md:px-6"
+  >
+    <p
+      [innerHTML]="gettoptickersdata.topticker1"
+      class="uppercase font-bold text-center truncate max-w-full text-[clamp(10px,2vw,16px)] leading-tight"
+    >
       {{ gettoptickersdata.topticker1 }}
     </p>
   </div>
 
-  <div class="topticker2 bg-[#ff0000] text-white font-semibold h-10 flex items-center justify-center">
-    <p [innerHTML]="gettoptickersdata.topticker2" class="uppercase">
+  <!-- Top Ticker 2 -->
+  <div
+    class="topticker2 bg-[#ff0000] text-white font-semibold h-8 sm:h-10 flex items-center justify-center px-2 sm:px-4 md:px-6"
+  >
+    <p
+      [innerHTML]="gettoptickersdata.topticker2"
+      class="uppercase truncate max-w-full text-[clamp(10px,2vw,16px)] leading-tight"
+    >
       {{ gettoptickersdata.topticker2 }}
     </p>
   </div>
 
-  <div class="topticker3 flex justify-between px-7.5 leading-12 bg-[#282626] text-[#FFFFFF] text-sm font-semibold items-center">
-   <!-- FREE SHIPPING : pill + right arrow tip -->
-<div class="inline-flex items-center select-none">
-  <!-- pill -->
-  <span
-    class="bg-[#2563EB] text-[#FFFFFF] uppercase font-semibold
-           px-4 h-8 inline-flex items-center text-[12.5px] leading-none">
-    {{ gettoptickersdata.topticker3left }}
-  </span>
-
-  <!-- arrow head (matches h-8 => 32px; so 16px + 16px borders) -->
-  <span
-    class="w-0 h-0 border-t-[16px] border-b-[16px] border-l-[16px]
-           border-t-transparent border-b-transparent border-l-[#2563EB]">
-  </span>
-</div>
-
-    <div>
-      <p  [innerHTML]="gettoptickersdata.topticker3center">{{ gettoptickersdata.topticker3center }}</p>
-    </div>
-    <div>
-    <ul class="flex justify-center items-center gap-4.5 divide-x divide-zinc-600">
-  @for (topticker3right of gettoptickersdata.topticker3right; track topticker3right) {
-    <li class="px-3">{{ topticker3right }}</li>
-  }
-</ul>
-
-    </div>
+ <!-- Top Ticker 3 -->
+<div
+  class="topticker3 flex flex-row justify-between px-2 sm:px-4 md:px-6 h-10 bg-[#282626] text-[#FFFFFF] font-semibold items-center gap-2 overflow-hidden"
+>
+  <!-- Left Pill (Hide below 765px) -->
+  <div class="inline-flex items-center select-none hidden md:flex">
+    <span
+      class="bg-[#2563EB] text-[#FFFFFF] uppercase font-semibold px-2 sm:px-3 h-6 inline-flex items-center text-[clamp(8px,1.5vw,12px)] leading-none"
+    >
+      {{ gettoptickersdata.topticker3left }}
+    </span>
+    <span
+      class="w-0 h-0 border-t-[12px] border-b-[12px] border-l-[12px] border-t-transparent border-b-transparent border-l-[#2563EB]"
+    ></span>
   </div>
 
+  <!-- Center (Always Visible) -->
+  <div class="flex-1 text-center overflow-hidden">
+    <p
+      [innerHTML]="gettoptickersdata.topticker3center"
+      class="truncate text-[clamp(9px,2vw,16px)] leading-tight"
+    >
+      {{ gettoptickersdata.topticker3center }}
+    </p>
+  </div>
+
+
+    <!-- Right -->
+    <div class="hidden md:block max-w-full overflow-x-auto">
+      <ul class="flex gap-1 sm:gap-2 md:gap-3 items-center text-[clamp(9px,1.8vw,14px)] whitespace-nowrap">
+        @for (item of gettoptickersdata.topticker3right; track item; let last = $last) {
+          <li class="px-1 sm:px-2" [ngClass]="!last ? 'border-r border-gray-600' : ''">
+
+            <!-- Austria Euro Dropdown -->
+            <ng-container *ngIf="item.trim() === 'Austria-EUR'">
+              <select class="bg-transparent text-white px-1 sm:px-2 py-0.5 sm:py-1 text-[clamp(9px,1.8vw,14px)]">
+                <option value="eur" class="text-black" selected>Austria-EUR</option>
+                <option value="inr" class="text-black">India-Rupees</option>
+                <option value="usd" class="text-black">US-Dollar</option>
+                <option value="gbp" class="text-black">UK-Pound</option>
+              </select>
+            </ng-container>
+
+            <!-- Language Dropdown -->
+            <ng-container *ngIf="item.trim() === 'Select Language'">
+              <select class="bg-transparent text-white px-1 sm:px-2 py-0.5 sm:py-1 text-[clamp(9px,1.8vw,14px)]">
+                <option value="" disabled selected>Select Language</option>
+                <option value="hin" class="text-black">Hin</option>
+                <option value="eng" class="text-black">Eng</option>
+              </select>
+            </ng-container>
+
+            <!-- Flag Dropdown -->
+            <ng-container *ngIf="item.trim() === 'Flag'">
+              <select class="bg-transparent text-white px-1 sm:px-2 py-0.5 sm:py-1 text-[clamp(9px,1.8vw,14px)]">
+                <option value="" disabled selected>Flag</option>
+                <option value="in" class="text-black">🇮🇳 India</option>
+                <option value="us" class="text-black">🇺🇸 USA</option>
+                <option value="gb" class="text-black">🇬🇧 UK</option>
+              </select>
+            </ng-container>
+
+            <!-- Normal Text -->
+            <ng-container
+              *ngIf="item.trim() !== 'Select Language' && item.trim() !== 'Flag' && item.trim() !== 'Austria-EUR'"
+            >
+              {{ item }}
+            </ng-container>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
 </div>
