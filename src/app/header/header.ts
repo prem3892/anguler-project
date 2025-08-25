@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-header',
   imports: [CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.css'
 })
 export class Header {
   getheaderdata:data=HeaderData;

@@ -8,7 +8,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   selector: 'app-topticker',
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './topticker.html',
-  styleUrl: './topticker.css'
 })
 export class Topticker {
 
