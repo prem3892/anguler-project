@@ -6,6 +6,14 @@ export const toptickersdata: data = {
     'one of the largest custom cover providers in the us is setting up shop in the european union. <u>shop now</u>',
   topticker3left: 'free shipping',
   topticker3center:
-    '< &nbsp; &nbsp; &nbsp; &nbsp; 22% Off + Free Gift. Use Code: HALLOWEEN &nbsp; &nbsp; &nbsp; &nbsp; >',
-  topticker3right: ['800-260-2829', 'Austria-EUR', 'Select Language', 'Flag'],
+    '22% Off + Free Gift. Use Code: HALLOWEEN',
+
+  currency: [
+    { title: '800-260-2829'},
+    { title: 'Austria-EUR', sub: ['India-Rs', 'US-Dollar', 'UK-Pound','Rus-Ruble'] },
+    { title: 'Select Language', sub: ['Hin', 'Eng', 'French','Russia'] },
+    { title: 'Flag', sub: ['Ind', 'US', 'UK','Rus'] },
+  ],
+
+  
 };
