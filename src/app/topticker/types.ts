@@ -4,6 +4,9 @@ export interface data{
   topticker2:string;
   topticker3left:string;
   topticker3center:string;
-  topticker3right:string[];
+  currency: {
+    title: string;
+    sub?: string[];
+  }[];
 
 }

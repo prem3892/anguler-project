@@ -14,3 +14,4 @@ export class Topticker {
   gettoptickersdata:data= toptickersdata;
 
 }
+
