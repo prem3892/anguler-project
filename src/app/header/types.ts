@@ -3,7 +3,7 @@ export interface data {
     headerImg: string;
     headerFill: string;
     headerRight: string[];
-    icons: string[];
+    icons: IconDefinition[];
     headerBottom: {
     title: string;
     sub?: string[];
