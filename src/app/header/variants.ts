@@ -1,5 +1,5 @@
 import { data, HeaderDataNew } from "./types";
-import { faCartShopping, faHeart, faSearch, faTruck, faUser,} from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faHeart, faImage, faMicrophone, faSearch, faTruck, faUser, } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -7,7 +7,7 @@ export const HeaderData: data = {
   headerImg: "./images/logo.png",
   headerFill: "search",
   headerRight: ["Order Tracking", "My Account", "Wishlist", "My Cart"],
- icons: [faSearch, faTruck, faUser],
+  icons: [faSearch, faImage ,faMicrophone],
   headerBottom: [
     { title: "Patio Furniture Covers", sub: ["Outdoor Chair Covers ", "Table Covers", "Sofa Covers", "Chair Covers", "Table Covers", "Sofa Covers"] },
     { title: "Services", sub: ["Installation", "Repair", "Chair Covers", "Table Covers", "Sofa Covers"] },
