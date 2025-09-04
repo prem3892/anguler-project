@@ -1,0 +1,130 @@
+<footer class="w-full ">
+    <div class="w-full bg-[#F9FAFB] md:h-33 items-center flex">
+        <div
+            class="max-w-270 newsletter flex flex-col md:flex-row justify-between items-center  px-8 py-6 gap-4 md:gap-10 mx-auto">
+            <div class="flex flex-col items-center md:items-start">
+                <p class=" md:text-lg text-sm tracking-wider font-normal text-[#003056]">
+                    {{getfooterdata.newsletterText1}}</p>
+                <p class="md:text-lg text-smtracking-wider font-semibold text-[#003056]">
+                    {{getfooterdata.newsletterText2}}</p>
+            </div>
+            <!-- Wrapper -->
+            <div class="">
+
+                <!-- Desktop view -->
+                <div class="hidden md:flex items-center lg:w-155 border border-gray-300 rounded-lg overflow-hidden">
+                    <!-- Input -->
+                    <input type="email" placeholder="Enter your Email..."
+                        class="flex-1 h-12 px-4 text-sm outline-none bg-white" />
+                    <!-- Button -->
+                    <button class="h-12 px-6 bg-blue-600 text-white font-semibold text-sm md:rounded-lg">
+                        Subscribe Now
+                    </button>
+                </div>
+
+                <!-- Mobile view -->
+                <div class="flex flex-col gap-3 md:hidden">
+                    <input type="email" placeholder="Enter your email address"
+                        class="h-12 px-4 w-75 border border-gray-300 rounded-lg text-sm outline-none" />
+                    <button class="h-12 bg-blue-600 text-white font-semibold text-sm rounded-lg">
+                        Subscribe Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" footerline w-full bg-[#F4F8FD] border-b border-gray-200 hidden lg:block">
+        <div class="max-w-screen-xl mx-auto flex justify-around items-center text-xs md:text-sm px-4 md:px-8 py-2 h-25">
+
+            <!-- Left Block -->
+            <div class="flex items-center gap-2 text-[#222D37]">
+                <fa-icon [icon]="['fas','truck']" class="text-blue-600"></fa-icon>
+                <span>
+                    Want real-time order updates?<br>
+                    <a href="#" class="text-blue-600 font-medium hover:underline">Sign in</a>
+                    to track your purchases instantly!
+                </span>
+            </div>
+
+            <!-- Right Block -->
+            <div class="flex items-center gap-2 text-[#222D37]">
+                <!-- <fa-icon [icon]="['fas','phone']" class="text-blue-600"></fa-icon> -->
+                <span>
+                    Need assistance? <br> Reach our support team at
+                    <a href="tel:8002602829" class="text-blue-600 font-medium hover:underline">800-260-2829</a>
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <!-- --------Large Screen Footer-------- -->
+    <div class="bottomfooter hidden w-full px-20 gap-20 pt-10 lg:flex ">
+        <div class="flex flex-col flex-1">
+            <div class="">
+                <h1 class="text-xl text-[#222D37] font-light italic pb-5">About Covers and All</h1>
+            </div>
+            <div class="text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi omnis alias, exercitationem perspiciatis
+                nisi, beatae officiis non ea praesentium perferendis explicabo in totam excepturi architecto iusto
+                doloremque, hic ab veniam?
+            </div>
+        </div>
+        <div class="flex flex-col flex-2.5">
+            <div class="">
+                <h1 class="text-xl text-[#222D37] font-light pb-5">Company Information</h1>
+            </div>
+            <div class="flex ">
+                <div class=" flex flex-1">
+                    <ul class="px-5">
+                       @for (items of getfooterdata.list1; track items) {
+                        <li class="py-1.5 text-sm list-disc">{{items}}</li>
+                       }
+                    </ul>
+                </div>
+                <div class=" flex flex-1">
+                    <ul class="px-5">
+                       @for (items of getfooterdata.list2; track items) {
+                        <li class="py-1.5 text-sm list-disc">{{items}}</li>
+                       }
+                    </ul>
+                </div>
+                <div class=" flex flex-1 flex-grow">
+                    <ul class="px-5">
+                       @for (items of getfooterdata.list3; track items) {
+                        <li class="py-1.5 text-sm list-disc">{{items}}</li>
+                       }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1">
+            <div class="">
+                <div class="">icon</div>
+                <div class="">
+                    <p>Location:</p>
+                    <p>Suwanee, GA 30024, USA</p>
+                </div>
+                <div class="">icon</div>
+                <div class="">
+                    <p>Reach by Phone:</p>
+                    <p>Suwanee, GA 30024, USA</p>
+                </div>
+                <div class="">icon</div>
+                <div class="">
+                    <p>Email Us:</p>
+                    <p>Suwanee, GA 30024, USA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------Small Screen Footer-------- -->
+     <div class="">
+        <ul class="flex justify-center flex-wrap lg:hidden">
+            @for(items of getfooterdata.list1; track items){
+                <li class="flex items-center text-xs px-2.5 border-r">{{items}}</li>
+            }
+        </ul>
+     </div>
+    <div class="h-50"></div>
+</footer>
