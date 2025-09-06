@@ -10,5 +10,11 @@ import { FaIconComponent } from "@fortawesome/angular-fontawesome";
   styleUrl: './footer.css'
 })
 export class Footer {
-  getfooterdata:data = footerData
+  getfooterdata:data = footerData;
+
+  onButtonCLick(){
+    alert("Hi");
+  }
+
 }
+
