@@ -4,9 +4,10 @@ import { Topticker } from './topticker/topticker';
 import { Header } from './header/header';
 import { Home } from './home/home';
 import { Footer } from "./footer/footer";
+import { SignalComp } from './signal/signal';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Topticker, Header, Footer, Home],
+  imports: [RouterOutlet, Topticker, Header, Footer, Home, SignalComp],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
