@@ -1,6 +1,7 @@
 <div
-  class="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-2xl shadow-lg"
+  class="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden shadow-lg"
 >
+  <!-- Slides -->
   <div
     *ngFor="let img of images; let i = index"
     class="absolute inset-0 transition-opacity duration-700 ease-in-out"
@@ -10,34 +11,42 @@
     <img [src]="img" alt="Slide" class="w-full h-full object-cover" />
   </div>
 
-  <!-- Arrows -->
-  <button
-    (click)="prevSlide()"
-    class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full hover:bg-black/60"
-  >
-    ‹
-  </button>
-  <button
-    (click)="nextSlide()"
-    class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full hover:bg-black/60"
-  >
-    ›
-  </button>
 
-  <!-- Dots -->
-  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-<button
-  *ngFor="let img of images; let i = index"
-  (click)="currentIndex = i"
-  class="w-3 h-3 rounded-full cursor-pointer"
-  [ngClass]="{
-    'bg-white': i === currentIndex,
-    'bg-gray-500': i !== currentIndex
-  }"
-  [attr.aria-label]="'Go to slide ' + (i + 1)"
+<div
+  class="hidden md:flex absolute top-1/4 right-0
+         bg-white bg-opacity-50 text-black px-2 py-1 text-xs
+         transform -rotate-90 origin-bottom-right w-34 h-9
+         justify-center items-center font-semibold rounded-t-sm"
 >
-  <span class="sr-only">Go to slide {{ i + 1 }}</span>
-</button>
+  <p class="whitespace-nowrap">Saved 30% OFF</p>
+</div>
 
+
+
+
+  <!-- Arrows + Counter (Bottom Right) -->
+  <div
+    class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 flex items-center space-x-2 sm:space-x-4 bg-white bg-opacity-50 text-black px-2 py-1 sm:px-4 sm:py-2 rounded-4xl text-xs sm:text-sm md:text-base"
+  >
+    <!-- Left Arrow -->
+    <button
+      (click)="prevSlide()"
+      class="text-lg sm:text-xl md:text-2xl font-bold hover:text-gray-300"
+    >
+      &#10094;
+    </button>
+
+    <!-- Current Slide Counter -->
+    <span class="font-medium">
+      {{ currentIndex + 1 }}/{{ images.length }}
+    </span>
+
+    <!-- Right Arrow -->
+    <button
+      (click)="nextSlide()"
+      class="text-lg sm:text-xl md:text-2xl font-bold hover:text-gray-300"
+    >
+      &#10095;
+    </button>
   </div>
 </div>
