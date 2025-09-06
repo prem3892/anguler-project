@@ -1,5 +1,5 @@
 <header class="w-full bg-[#F9FAFB]">
-  <div class="header flex justify-between items-center px-8 py-5 gap-x-5 md:gap-x-10 gap-y-4  flex-wrap mx-auto">
+  <div class="header flex justify-between items-center px-4 py-5 gap-x-5 md:px-8 md:gap-x-10 gap-y-4  flex-wrap mx-auto">
     
     <!-- Logo -->
     <div class="logo mx-auto w-full md:w-44 flex justify-center order-1">
@@ -7,7 +7,7 @@
     </div>
 
     <!-- Search Box -->
-    <div class="searchBox order-2 w-48 h-10 md:w-72 md:h-10 bg-white border border-[#E7EAEE] flex flex-grow justify-between items-center px-4 py-2 rounded-lg">
+    <div class="searchBox order-2 w-45 h-10 md:w-72 md:h-10 bg-white border border-[#E7EAEE] flex flex-grow justify-between items-center px-4 py-2 rounded-lg">
       <input type="text" placeholder="Search"
         class="searchInput text-xs font-normal opacity-60 outline-none w-10 sm:w-full flex-1">
       <div class="icons">
@@ -27,6 +27,10 @@
         <li class="flex items-center gap-2 hover:text-[#2867d9] cursor-pointer [&:nth-child(1)]:hidden [&:nth-child(2)]:hidden md:[&:nth-child(1)]:inline-flex md:[&:nth-child(2)]:inline-flex">
           <fa-icon [icon]="item.icon"></fa-icon>
           <span class="hidden md:inline-flex">{{item.label}}</span>
+
+          <div *ngIf="getheaderdatanew.sub?.length">
+            <p  class="hidden hover:block hover:bg-amber-500">Lorem ipsum dolor sit amet.</p>
+          </div>
         </li>}
       </ul>
     </div>

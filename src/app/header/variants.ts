@@ -6,7 +6,6 @@ import { faCartShopping, faHeart, faImage, faMicrophone, faSearch, faTruck, faUs
 export const HeaderData: data = {
   headerImg: "./images/logo.png",
   headerFill: "search",
-  headerRight: ["Order Tracking", "My Account", "Wishlist", "My Cart"],
   icons: [faSearch, faImage ,faMicrophone],
   headerBottom: [
     { title: "Patio Furniture Covers", sub: ["Outdoor Chair Covers ", "Table Covers", "Sofa Covers", "Chair Covers", "Table Covers", "Sofa Covers"] },

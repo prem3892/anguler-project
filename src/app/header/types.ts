@@ -2,7 +2,6 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 export interface data {
     headerImg: string;
     headerFill: string;
-    headerRight: string[];
     icons: IconDefinition[];
     headerBottom: {
     title: string;
@@ -13,5 +12,5 @@ export interface data {
 
 
 export interface HeaderDataNew{
- sub: { label: string; icon: IconDefinition }[];
+ sub: { label: string; icon: IconDefinition;}[];
 }
