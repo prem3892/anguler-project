@@ -14,4 +14,7 @@ import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 export class Header {
   getheaderdata:data=HeaderData;
   getheaderdatanew:HeaderDataNew=headerDataNew;
+  focusSearch(input: HTMLInputElement) {
+    input.focus();
+  }
 }
