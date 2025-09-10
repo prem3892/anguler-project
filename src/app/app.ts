@@ -6,10 +6,10 @@ import { Home } from './home/home';
 import { Footer } from "./footer/footer";
 import { ProductCart } from './product-cart/product-cart';
 import { Productcategories } from './productcategories/productcategories';
-// import { SignalComp } from './signal/signal';
+import { SignalComp } from './signal/signal';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories],
+  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories, SignalComp],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

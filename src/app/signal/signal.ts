@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signal',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './signal.html',
   styleUrl: './signal.css'
 })
@@ -19,4 +20,15 @@ decreaseCount(){
 resetCount(){
   this.count.set(0)
 }
+
+color =  signal("text-red-500");
+
+handleClick(){
+  this.color.set("text-green-500")
+}
+
+handleUpdate(){
+  this.color.update(c=>c==="text-red-500" ? "text-green-500": "text-red-500")
+}
+
 }
