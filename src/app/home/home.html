@@ -1,0 +1,52 @@
+<div
+  class="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden shadow-lg"
+>
+  <!-- Slides -->
+  <div
+    *ngFor="let img of images; let i = index"
+    class="absolute inset-0 transition-opacity duration-700 ease-in-out"
+    [class.opacity-100]="i === currentIndex"
+    [class.opacity-0]="i !== currentIndex"
+  >
+    <img [src]="img" alt="Slide" class="w-full h-full object-cover" />
+  </div>
+
+
+<div
+  class="hidden md:flex absolute top-1/4 right-0
+         bg-white bg-opacity-50 text-black px-2 py-1 text-xs
+         transform -rotate-90 origin-bottom-right w-34 h-9
+         justify-center items-center font-semibold rounded-t-sm"
+>
+  <p class="whitespace-nowrap">Saved 30% OFF</p>
+</div>
+
+
+
+
+  <!-- Arrows + Counter (Bottom Right) -->
+  <div
+    class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 flex items-center space-x-2 sm:space-x-4 bg-white bg-opacity-50 text-black px-2 py-1 sm:px-4 sm:py-2 rounded-4xl text-xs sm:text-sm md:text-base"
+  >
+    <!-- Left Arrow -->
+    <button
+      (click)="prevSlide()"
+      class="text-lg sm:text-xl md:text-2xl font-bold hover:text-gray-300"
+    >
+      &#10094;
+    </button>
+
+    <!-- Current Slide Counter -->
+    <span class="font-medium">
+      {{ currentIndex + 1 }}/{{ images.length }}
+    </span>
+
+    <!-- Right Arrow -->
+    <button
+      (click)="nextSlide()"
+      class="text-lg sm:text-xl md:text-2xl font-bold hover:text-gray-300"
+    >
+      &#10095;
+    </button>
+  </div>
+</div>

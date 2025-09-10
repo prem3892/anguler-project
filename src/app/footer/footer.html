@@ -1,0 +1,173 @@
+<footer class="w-full">
+    <!-- Newsletter -->
+    <div class="w-full bg-[#F9FAFB] md:h-33 items-center flex">
+        <div
+            class="lg:max-w-270 newsletter flex flex-col md:flex-row justify-between items-center  md:px-8 py-6 gap-4 md:gap-10 mx-auto">
+            <div class="flex flex-col items-center md:items-start">
+                <p class=" md:text-lg text-sm tracking-wider font-normal text-[#003056]">
+                    {{getfooterdata.newsletterText1}}</p>
+                <p class="md:text-lg text-smtracking-wider font-semibold text-[#003056]">
+                    {{getfooterdata.newsletterText2}}</p>
+            </div>
+
+            <!-- Desktop view -->
+            <form class="hidden md:flex items-center lg:w-155 border-4 border-[#E7EAEE] rounded-lg p-1">
+                <!-- Input -->
+                <input type="email" placeholder="Enter your Email..."
+                    class="flex-1 h-12 px-4 text-sm outline-none rounded-lg bg-white" />
+                <!-- Button -->
+                <button type="submit" class="h-12 px-6 bg-blue-600 text-white font-medium text-sm md:rounded-lg" (click)="onButtonCLick()">
+                    Subscribe Now
+                </button>
+            </form>
+
+            <!-- Mobile view -->
+            <div class="flex flex-col px-4 gap-3 md:hidden">
+                <input type="email" placeholder="Enter your email address"
+                    class="h-12 px-4 w-70 border border-gray-300 rounded-lg text-sm outline-none" />
+                <button class="h-12 bg-blue-600 text-white font-semibold text-sm rounded-lg" (click)="onButtonCLick()">
+                    Subscribe Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Line -->
+
+    <div class=" footerline w-full bg-[#F4F8FD] border-b border-gray-200 hidden lg:block">
+        <div class="max-w-screen-xl mx-auto flex justify-around items-center text-xs md:text-sm px-4 md:px-8 py-2 h-25">
+
+            <!-- Left Block -->
+            <div class="flex items-center gap-2 text-[#222D37]">
+                <fa-icon [icon]="getfooterdata.updatesIcon" class="text-2xl"></fa-icon>
+                <span class="pl-3">
+                    Want real-time order updates?<br>
+                    <a href="#" class="text-blue-600 font-medium hover:underline">Sign in</a>
+                    to track your purchases instantly!
+                </span>
+            </div>
+
+            <!-- Right Block -->
+            <div class="flex items-center gap-2 text-[#222D37]">
+                <fa-icon [icon]="getfooterdata.phoneIcon" class="text-2xl"></fa-icon>
+                <span class="pl-3">
+                    Need assistance? <br> Reach our support team at
+                    <a href="tel:8002602829" class="text-blue-600 font-medium hover:underline">800-260-2829</a>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <!-- --------Large Screen Footer-------- -->
+    <div class="bottomfooter hidden w-full px-20 gap-20 pt-10 lg:flex bg-[#F1F6FE]">
+        <div class="flex flex-col flex-1">
+            <div class="">
+                <h1 class="text-xl text-[#222D37] font-light italic pb-5">About Covers and All</h1>
+            </div>
+            <div class="text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi omnis alias, exercitationem perspiciatis
+                nisi, beatae officiis non ea praesentium perferendis explicabo in totam excepturi architecto iusto
+                doloremque, hic ab veniam?
+            </div>
+        </div>
+        <div class="flex flex-col flex-2">
+            <div class="">
+                <h1 class="text-xl text-[#222D37] font-light pb-5">Company Information</h1>
+            </div>
+            <div class="flex ">
+                <div class=" flex flex-1">
+                    <ul class="px-5">
+                        @for (items of getfooterdata.list1; track items) {
+                        <li class="py-1.5 text-sm list-disc">{{items}}</li>
+                        }
+                    </ul>
+                </div>
+                <div class=" flex flex-1">
+                    <ul class="px-5">
+                        @for (items of getfooterdata.list2; track items) {
+                        <li class="py-1.5 text-sm list-disc">{{items}}</li>
+                        }
+                    </ul>
+                </div>
+                <div class=" flex flex-1 flex-grow">
+                    <ul class="px-5">
+                        @for (items of getfooterdata.list3; track items) {
+                        <li class="py-1.5 text-sm list-disc">{{items}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1">
+            <div class="">
+                <div class="flex items-center">
+                    <fa-icon [icon]="getfooterdata.locationIcon" class=" bg-white rounded-full p-2"></fa-icon>
+                    <div class="pl-3">
+                        <p>Location:</p>
+                        <p>Suwanee, GA 30024, USA</p>
+                    </div>
+                </div>
+                <div class="flex items-center py-10">
+                    <fa-icon [icon]="getfooterdata.phoneIcon" class=" bg-white rounded-full p-2"></fa-icon>
+                    <div class="pl-3">
+                        <p>Reach by Phone:</p>
+                        <p>Suwanee, GA 30024, USA</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <fa-icon [icon]="getfooterdata.EmailIcon" class=" bg-white rounded-full p-2"></fa-icon>
+                    <div class="pl-3">
+                        <p>Email Us:</p>
+                        <p>Suwanee, GA 30024, USA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -------Small Screen Footer-------- -->
+    <div class="bg-[#F1F6FE]">
+        <ul class="flex justify-center flex-wrap lg:hidden py-4 gap-2">
+            @for(items of getfooterdata.list1; track items){
+            <li class="flex items-center text-xs px-2.5 border-r last:border-0 ">{{items}}</li>
+            }
+        </ul>
+    </div>
+
+    <!-- Copyright -->
+    <div class="w-full gap-5 py-5 flex  items-center px-3 lg:px-20  lg:gap-20  md:flex md:flex-row md:items-center flex-wrap bg-[#F1F6FE] border-1 border-white">
+        <div class="flex-1 order-1">
+            <p class="text-xs">© 2025 <span class="text-[#248add]">coversandall.com</span> All Rights Reserved.</p>
+        </div>
+        <div class="flex-2 order-2">
+            <div class="flex flex-col items-center">
+                <p class="">Guranteed SAFE Checkout</p>
+            <div class="box w-auto inline-flex border-1 items-center border-[#E7EAEE]">
+                <div class=" text:xl px-1 md:text-2xl lg:px-4 ">Norton</div>
+                <div class="px-2">
+                    <div class="flex text-sm md:text-xl gap-2 md:gap-3 py-1 md:py-2">
+                        @for (item of getfooterdata.payments.slice(0, 3); track item) {
+                        <fa-icon [icon]="item" class=" border-3 rounded-lg w-15 border-[#E7EAEE] "></fa-icon>
+                        }
+                    </div>
+                    <div class="flex text-sm md:text-xl gap-2 md:gap-3 py-1 md:py-2">
+                        @for (item of getfooterdata.payments.slice(3,6); track item) {
+                        <fa-icon [icon]="item"  class=" border-3 rounded-lg w-15 border-[#E7EAEE]"></fa-icon>
+                        }
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+            <div class="icons flex flex-1 gap-2 order-3">
+                @for (item of getfooterdata.socialIcons; track item) {
+                <fa-icon [icon]="item" class=" text-sm md:text-lg bg-white rounded-full p-2 "></fa-icon>
+                }
+            </div>
+
+    </div>
+</footer>
