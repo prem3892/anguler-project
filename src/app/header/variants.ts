@@ -1,5 +1,5 @@
 import { data, HeaderDataNew } from "./types";
-import { faCartShopping, faHeart, faImage, faMicrophone, faSearch, faTruck, faUser, } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faHeart, faImage, faMicrophone, faSearch, faTruckFast, faUser, } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -20,7 +20,7 @@ export const HeaderData: data = {
 
 export const headerDataNew: HeaderDataNew = {
   sub: [
-    { label: "Order Tracking", icon: faTruck },
+    { label: "Order Tracking", icon: faTruckFast },
     { label: "My Account", icon: faUser },
     { label: "Wishlist", icon: faHeart },
     { label: "My Cart", icon: faCartShopping },
