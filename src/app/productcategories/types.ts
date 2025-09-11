@@ -1,7 +1,9 @@
-export interface data{
-    heading: string,
-    card:{
+export interface data {
+    heading1: string,
+    heading2: string,
+    card: {
         img: string,
         desc: string
     }[];
+    button: string;
 }
