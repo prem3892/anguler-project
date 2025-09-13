@@ -1,0 +1,25 @@
+<div class="flex justify-center items-center gap-5">
+    <button (click)="increment()" class="border cursor-pointer border-black px-3 py-2">Increase Count</button>
+    <button (click)="decrement()" class="border cursor-pointer border-black px-3 py-2">Decrease Count</button>
+    <button (click)="reset()" class="border cursor-pointer border-black px-3 py-2">Reset Count</button>
+
+</div>
+<div class="flex justify-center items-center mt-5 mb-10">
+    <h1 class="text-lg">{{count()}}</h1>
+</div>
+
+
+
+<div class="flex justify-center items-center flex-col gap-5">
+    <button (click)="changeColor()" class="border cursor-pointer border-black px-3 py-2">Click me</button>
+    <h1 [ngClass]="color()">Click button to change my color</h1>
+    <button (click)="toggleColor()" class="border mb-10 cursor-pointer border-black px-3 py-2">Toggle</button>
+</div>
+
+
+<!-- Back to top -->
+@if(displayButton){
+<div>
+    <button (click)="backToTop()" class="text-white bg-black rounded-full w-10 h-10 bottom-5 right-5 fixed">↑</button>
+</div>
+}

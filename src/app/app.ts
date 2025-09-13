@@ -7,9 +7,10 @@ import { Footer } from "./footer/footer";
 import { ProductCart } from './product-cart/product-cart';
 import { Productcategories } from './productcategories/productcategories';
 import { SignalComp } from './signal/signal';
+import { PracticesignalScroll } from './practicesignal-scroll/practicesignal-scroll';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories, SignalComp],
+  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories, SignalComp, PracticesignalScroll],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

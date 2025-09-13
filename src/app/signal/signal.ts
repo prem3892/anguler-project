@@ -14,6 +14,7 @@ increament(){
   this.count.update(value=>value+1)
 }
 
+
 decreaseCount(){
   this.count.update(value=>value-1)
 }
