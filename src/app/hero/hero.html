@@ -1,0 +1,22 @@
+<div class="">
+    <div class="relative">
+        <video autoplay muted loop class="h-130 w-full inset-0 object-cover ">
+            <source src="{{getherodata.video}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-[#003056]/50"></div>
+
+        <div class="flex gap-3 flex-col justify-center items-center absolute top-0 w-full h-full text-white">
+            <h1 class="text-3xl font-semibold tracking-wider w-71 md:w-173 text-center">{{getherodata.h1}}</h1>
+            <button class="text-sm px-6 py-3 mt-5 border border-white rounded-lg md:px-15 sm:py-2">{{getherodata.button}}</button>
+            <div class="flex mt-15">
+                @for (item of getherodata.vector; track item) {
+                <div class="flex flex-col px-2 sm:px-10 items-center">
+                    <fa-icon [icon]="item.icon"></fa-icon>
+                    <p class="text-sm md:text-[16px]  text-center">{{item.text}}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
