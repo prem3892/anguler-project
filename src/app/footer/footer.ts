@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { footerData } from './variants';
 import { data } from './types';
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import {  RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [FaIconComponent],
+  imports: [RouterLink, FaIconComponent],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })
