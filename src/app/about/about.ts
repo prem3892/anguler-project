@@ -1,11 +1,32 @@
-import { Component } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, OnInit } from '@angular/core';
+
+interface User {
+  id: string;
+  firstName: string;
+}
+
+interface ApiResponse {
+  users: User[];
+}
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  standalone: true,
+  imports: [JsonPipe],
   templateUrl: './about.html',
-  styleUrl: './about.css'
+  styleUrls: ['./about.css'],
 })
-export class About {
+export class About implements OnInit {
+  private http = inject(HttpClient);
 
+  usersData: User[] = [];
+  api = 'https://dummyjson.com/users';
+
+  ngOnInit(): void {
+    this.http.get<ApiResponse>(this.api).subscribe((res) => {
+      this.usersData = res.users;
+    });
+  }
 }
