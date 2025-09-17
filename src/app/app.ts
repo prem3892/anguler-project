@@ -8,9 +8,10 @@ import { ProductCart } from './product-cart/product-cart';
 import { Productcategories } from './productcategories/productcategories';
 import { SignalComp } from './signal/signal';
 import { GoToTop } from './go-to-top/go-to-top';
+import { Hero } from './hero/hero';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories, SignalComp, GoToTop],
+  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories, SignalComp, GoToTop, Hero],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
