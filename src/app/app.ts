@@ -1,8 +1,8 @@
+import { HeroBanner } from './heroBanner/heroBanner';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Topticker } from './topticker/topticker';
 import { Header } from './header/header';
-import { Home } from './home/home';
 import { Footer } from "./footer/footer";
 import { ProductCart } from './product-cart/product-cart';
 import { Productcategories } from './productcategories/productcategories';
@@ -12,7 +12,7 @@ import { Hero } from './hero/hero';
 import { ProductSwiper } from './product-swiper/product-swiper';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Topticker, Header, Footer, Home, ProductCart, Productcategories, SignalComp, GoToTop, Hero, ProductSwiper],
+  imports: [RouterOutlet, Topticker, Header, Footer, HeroBanner, ProductCart, Productcategories, SignalComp, GoToTop, Hero, ProductSwiper],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

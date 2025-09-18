@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { SliderVariants } from './variants';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-hero-banner',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.html',
-  styleUrls: ['./home.css'],
+  templateUrl: './heroBanner.html',
+  styleUrls: ['./heroBanner.css'],
 })
-export class Home implements OnInit, OnDestroy {
+export class HeroBanner implements OnInit, OnDestroy {
   currentIndex = 0;
   images: string[] = [];
   intervalId: number | undefined;
