@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 
@@ -14,7 +13,7 @@ interface ApiResponse {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: './about.html',
   styleUrls: ['./about.css'],
 })

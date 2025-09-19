@@ -1,67 +1,115 @@
 <header class="w-full bg-[#F9FAFB]">
   <div
-    class="header flex justify-between items-center px-4 py-5 gap-x-5 md:px-8 md:gap-x-10 gap-y-4  flex-wrap mx-auto">
-
+    class="header flex justify-between items-center px-4 py-5 gap-x-5 md:px-8 md:gap-x-10 gap-y-4 flex-wrap mx-auto"
+  >
     <!-- Logo -->
     <div class="logo mx-auto w-full md:w-44 flex justify-center order-1">
-      <img src="{{getheaderdata.headerImg}}" alt="">
+      <a routerLink="/" class="block">
+        <img
+          src="{{ getheaderdata.headerImg }}"
+          alt="Logo"
+          class="cursor-pointer"
+        />
+      </a>
     </div>
 
     <!-- Search Box -->
     <div
-      class="searchBox order-2 w-45 h-10 md:w-72 md:h-10 bg-white border border-[#E7EAEE] flex flex-grow justify-between items-center px-4 py-2 rounded-lg">
-      <input type="text" placeholder="Search" #searchInput
-        class="searchInput text-xs font-normal opacity-60 outline-none w-10 sm:w-full flex-1">
+      class="searchBox order-2 w-45 h-10 md:w-72 md:h-10 bg-white border border-[#E7EAEE] flex flex-grow justify-between items-center px-4 py-2 rounded-lg"
+    >
+      <input
+        type="text"
+        placeholder="Search"
+        #searchInput
+        class="searchInput text-xs font-normal opacity-60 outline-none w-10 sm:w-full flex-1"
+      />
       <div class="icons">
         <ul class="flex">
           @for(icons of getheaderdata.icons; track icons; let i = $index) {
-          <li class="flex items-center text-xs px-2.5 last:pr-0 border-r last:border-0 border-[#000]">
-            <fa-icon [icon]="icons" class="cursor-pointer" (click)="i === 0 ? focusSearch(searchInput) : null"></fa-icon>
-          </li>}
+          <li
+            class="flex items-center text-xs px-2.5 last:pr-0 border-r last:border-0 border-[#000]"
+          >
+            <fa-icon
+              [icon]="icons"
+              class="cursor-pointer"
+              (click)="i === 0 ? focusSearch(searchInput) : null"
+            ></fa-icon>
+          </li>
+          }
         </ul>
       </div>
     </div>
 
     <!-- Header Right -->
     <div class="headerRight mx-auto order-3 z-50">
-      <ul class="flex items-center gap-5 md:gap-7 font-medium text-[#333333] text-sm">
+      <ul
+        class="flex items-center gap-5 md:gap-7 font-medium text-[#333333] text-sm"
+      >
         @for(item of getheaderdatanew.sub; track item; let i = $index) {
         <li
-          class=" relative flex items-center gap-2 hover:text-[#2867d9] cursor-pointer [&:nth-child(1)]:hidden [&:nth-child(2)]:hidden md:[&:nth-child(1)]:inline-flex md:[&:nth-child(2)]:inline-flex group">
-          <fa-icon [icon]="item.icon"></fa-icon>
-          <span class="hidden md:inline-flex">{{item.label}}</span>
+          class="relative flex items-center gap-2 hover:text-[#2867d9] cursor-pointer [&:nth-child(1)]:hidden [&:nth-child(2)]:hidden md:[&:nth-child(1)]:inline-flex md:[&:nth-child(2)]:inline-flex group"
+        >
+          <a [routerLink]="item.path" class="flex items-center gap-2">
+            <fa-icon [icon]="item.icon"></fa-icon>
+            <span class="hidden md:inline-flex">{{ item.label }}</span>
+          </a>
+
           @if (i===1) {
-          <div class="absolute left-0 top-full w-40 p-3 bg-white shadow-lg hidden group-hover:block">
-            <div class="flex items-center flex-col ">
-              <button class="bg-[#2867d9] text-white px-5 py-2 mb-3 w-full cursor-pointer">
-                <a routerLink="about">Login</a>
+          <div
+            class="absolute left-0 top-full w-40 p-3 bg-white shadow-lg hidden group-hover:block"
+          >
+            <div class="flex items-center flex-col">
+              <button
+                class="bg-[#2867d9] text-white px-5 py-2 mb-3 w-full cursor-pointer"
+                routerLink="/login"
+              >
+                Login
               </button>
-              <span class="text-[10px] cursor-pointer pb-2">Don't have an account</span>
-              <button class="bg-white border-1 border-[#2867d9] text-[#2867d9] px-5 py-2 w-full cursor-pointer">Register</button>
+              <span class="text-[10px] cursor-pointer pb-2"
+                >Don't have an account</span
+              >
+              <button
+                class="bg-white border-1 border-[#2867d9] text-[#2867d9] px-5 py-2 w-full cursor-pointer"
+                routerLink="/register"
+              >
+                Register
+              </button>
             </div>
           </div>
           }
         </li>
+
         }
       </ul>
     </div>
   </div>
 
   <!-- Menu -->
-  <div class="hidden md:block border border-gray-200 bg-white ">
-    <ul class="flex justify-center container items-center gap-2 lg:gap-5 text-xs lg:text-sm text-[#222D37] font-medium">
+  <div class="hidden md:block border border-gray-200 bg-white">
+    <ul
+      class="flex justify-center container items-center gap-2 lg:gap-5 text-xs lg:text-sm text-[#222D37] font-medium"
+    >
       @for (item of getheaderdata.headerBottom; track item; let i = $index) {
       <li
-        class="relative hover:bg-[#f1f8ff] py-3.5 px-2  cursor-pointer group [&:nth-child(n+6)>ul]:left-auto [&:nth-child(n+6)>ul]:right-0">
+        class="relative hover:bg-[#f1f8ff] py-3.5 px-2 cursor-pointer group [&:nth-child(n+6)>ul]:left-auto [&:nth-child(n+6)>ul]:right-0"
+      >
         {{ item.title }}
 
         <!-- Submenu -->
-        <ul *ngIf="item.sub?.length"
-          class="absolute top-full hidden group-hover:block bg-[#f1f8ff] shadow-lg min-w-[250px] z-50 left-0">
+        <ul
+          *ngIf="item.sub?.length"
+          class="absolute top-full hidden group-hover:block bg-[#f1f8ff] shadow-lg min-w-[250px] z-50 left-0"
+        >
           @for (subItem of item.sub; track subItem) {
-          <li class="px-4 py-2 text-[#222D37] hover:text-[#2867d9]  cursor-pointer">{{ subItem }}</li>}
+          <li
+            class="px-4 py-2 text-[#222D37] hover:text-[#2867d9] cursor-pointer"
+          >
+            {{ subItem }}
+          </li>
+          }
         </ul>
-      </li>}
+      </li>
+      }
     </ul>
   </div>
 </header>
