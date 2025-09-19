@@ -1,18 +1,21 @@
 import { data, HeaderDataNew } from './types';
 import {
-  faHeart,
   faImage,
   faMicrophone,
   faPhone,
   faSearch,
   faTruckFast,
   faUser,
+  faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const HeaderData: data = {
   headerImg: './images/logo.png',
   headerFill: 'search',
   icons: [faSearch, faImage, faMicrophone],
+  login: 'Login',
+  register: 'Register',
+  span: `Don't have an account`,
   headerBottom: [
     {
       title: 'Patio Furniture Covers',
@@ -88,7 +91,7 @@ export const headerDataNew: HeaderDataNew = {
   sub: [
     { label: 'Order Tracking', icon: faTruckFast },
     { label: 'My Account', icon: faUser },
-    { label: 'About Us', icon: faHeart, path: '/about' },
+    { label: 'About Us', icon: faUsers, path: '/about' },
     { label: 'Contact Us', icon: faPhone, path: '/contact' },
   ],
 };

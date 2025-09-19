@@ -7,6 +7,9 @@ export interface data {
     title: string;
     sub?: string[];
   }[];
+  login: string;
+  register: string;
+  span: string;
 }
 
 export interface HeaderDataNew {
